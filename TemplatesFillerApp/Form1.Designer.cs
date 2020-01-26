@@ -57,7 +57,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(319, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "C:\\Users\\nico_\\Desktop\\prueba.docx";
+            this.textBox1.Text = "C:\\Users\\nico_\\Desktop\\pruebaTemplate.html";
             // 
             // label1
             // 
@@ -159,6 +159,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "Templates Filler App";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

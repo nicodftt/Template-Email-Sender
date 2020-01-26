@@ -55,7 +55,7 @@ namespace TemplatesFillerApp
 
             statusWindow.SetText("Loading files...");
 
-            bodyText = wordLoader.loadData(textBox1.Text, statusWindow);
+            bodyText = File.ReadAllText(textBox1.Text);
 
             excelData = workbookManipulator.loadData(textBox2.Text, statusWindow);
 
@@ -147,6 +147,11 @@ namespace TemplatesFillerApp
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

@@ -24,22 +24,19 @@ namespace TemplatesFillerApp
             foreach (Range column in usedRange.Columns) {
                
                 excelDataTable.Columns.Add(column.Rows.Cells[1,columnIndex].Value2);
-
              
-            }
-           
+            }          
         
         }
 
         private void copyValues(Range UsedRange) {
             /* This method copy all the data from the rows to the dataTable.
-             * I don't know how to do it without using the index counters. I have to investigate*/
+             * I don't know how to do it without using the index counters. I have to investigate and clean this part*/
             int rowIndex = 2;
 
             int dataTableRowIndex = 0;
 
-            int columnIndex = 1;
-         
+            int columnIndex = 1;         
 
             while(dataTableRowIndex < UsedRange.Rows.Count - 1) {
 

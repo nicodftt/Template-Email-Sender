@@ -67,7 +67,7 @@
     <Compile Include="Manipulator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WordManipulator.cs" />
+    <Compile Include="HtmlManipulator.cs" />
     <Compile Include="WorkbookManipulator.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

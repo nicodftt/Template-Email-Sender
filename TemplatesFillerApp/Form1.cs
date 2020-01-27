@@ -24,6 +24,10 @@ namespace TemplatesFillerApp
 
         private System.Data.DataTable excelData = new System.Data.DataTable();
 
+        HtmlManipulator htmlManipulator = new HtmlManipulator();
+
+        WorkbookManipulator workbookManipulator = new WorkbookManipulator();
+
         public Form1()
         {
             InitializeComponent();
@@ -33,7 +37,6 @@ namespace TemplatesFillerApp
         {
 
         }
-
 
         private void openErrorWindows(String exception)
         {
@@ -46,19 +49,14 @@ namespace TemplatesFillerApp
 
         }
 
-
         private void getInfoFromFiles()
         {
-            WordManipulator wordLoader = new WordManipulator();
-
-            WorkbookManipulator workbookManipulator = new WorkbookManipulator();
 
             statusWindow.SetText("Loading files...");
 
-            bodyText = File.ReadAllText(textBox1.Text);
+            bodyText = htmlManipulator.loadData(textBox1.Text,statusWindow);
 
             excelData = workbookManipulator.loadData(textBox2.Text, statusWindow);
-
         }
 
         private String createBodyText(DataRow row)
@@ -73,9 +71,6 @@ namespace TemplatesFillerApp
                auxiliarBody = auxiliarBody.Replace("*["+column.ColumnName+"]",""+row[column.ColumnName]);
 
             }
-
-            Clipboard.SetText(auxiliarBody);
-
             return auxiliarBody;
         
         }
@@ -87,9 +82,6 @@ namespace TemplatesFillerApp
             client.EnableSsl = true;
 
             client.Credentials = new System.Net.NetworkCredential(textBox4.Text, textBox5.Text);
-
- 
-
 
 
             foreach (DataRow row in excelData.Rows)

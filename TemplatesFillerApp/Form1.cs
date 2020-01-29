@@ -14,6 +14,7 @@ using Microsoft.Office.Interop.Excel;
 
 
 
+
 namespace TemplatesFillerApp
 {
     public partial class Form1 : Form
@@ -77,7 +78,7 @@ namespace TemplatesFillerApp
 
         private void sendEmails() {
 
-            SmtpClient client = new SmtpClient("smtp.gmail.com",587);
+            SmtpClient client = new SmtpClient(comboBox1.Text,Int32.Parse(textBox6.Text));
 
             client.EnableSsl = true;
 
@@ -144,6 +145,52 @@ namespace TemplatesFillerApp
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+            if (folderDialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox2.Text = folderBrowserDialog1.SelectedPath;
+            }
+
+
+        }
+
+        private void folderBrowserDialog1_HelpRequest_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

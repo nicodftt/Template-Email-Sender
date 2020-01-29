@@ -21,3 +21,5 @@ Every row is a different mailbox to send an email.
 
 - [ ] Improve user interface.
 
+- [X] Add imputs for SMTP server and port.
+

@@ -157,6 +157,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.label6.Location = new System.Drawing.Point(14, 193);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 20);
@@ -198,9 +199,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(502, 100);
+            this.button2.Location = new System.Drawing.Point(502, 98);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(33, 24);
+            this.button2.Size = new System.Drawing.Size(33, 26);
             this.button2.TabIndex = 15;
             this.button2.Text = "...";
             this.button2.UseVisualStyleBackColor = true;
@@ -208,12 +209,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(502, 158);
+            this.button3.Location = new System.Drawing.Point(504, 38);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(33, 25);
+            this.button3.Size = new System.Drawing.Size(33, 26);
             this.button3.TabIndex = 16;
             this.button3.Text = "...";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 

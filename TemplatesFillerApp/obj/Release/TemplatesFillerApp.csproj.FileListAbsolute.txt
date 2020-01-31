@@ -1,0 +1,13 @@
+D:\git\Template-Email-Sender\TemplatesFillerApp\bin\Release\TemplatesFillerApp.exe.config
+D:\git\Template-Email-Sender\TemplatesFillerApp\bin\Release\TemplatesFillerApp.exe
+D:\git\Template-Email-Sender\TemplatesFillerApp\bin\Release\TemplatesFillerApp.pdb
+D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.csprojAssemblyReference.cache
+D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\Interop.ACTIVEXLib.dll
+D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.csproj.ResolveComReference.cache
+D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.Form1.resources
+D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.Form2.resources
+D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.Form3.resources
+D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.Properties.Resources.resources
+D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.csproj.GenerateResource.cache
+D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.exe
+D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.pdb

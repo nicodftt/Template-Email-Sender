@@ -76,6 +76,29 @@ namespace TemplatesFillerApp
         
         }
 
+        private String OpenFolderDialog()
+        {
+
+            OpenFileDialog folderBrowser = new OpenFileDialog();
+            // Set validate names and check file exists to false otherwise windows will
+            // not let you select "Folder Selection."
+            folderBrowser.ValidateNames = false;
+            folderBrowser.CheckFileExists = false;
+            folderBrowser.CheckPathExists = true;
+            // Always default to Folder Selection.
+            folderBrowser.FileName = "Folder Selection.";
+            if (folderBrowser.ShowDialog() == DialogResult.OK)
+            {
+                return folderBrowser.FileName;
+                // ...
+            }
+
+            return folderBrowser.FileName;
+
+
+        }
+
+
         private void sendEmails() {
 
             SmtpClient client = new SmtpClient(comboBox1.Text,Int32.Parse(textBox6.Text));
@@ -134,6 +157,7 @@ namespace TemplatesFillerApp
             }
         }
 
+
         private void label3_Click_1(object sender, EventArgs e)
         {
 
@@ -176,12 +200,7 @@ namespace TemplatesFillerApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
-            if (folderDialog.ShowDialog() == DialogResult.OK)
-            {
-                textBox2.Text = folderBrowserDialog1.SelectedPath;
-            }
-
+            textBox2.Text = OpenFolderDialog();
 
         }
 
@@ -193,6 +212,11 @@ namespace TemplatesFillerApp
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = OpenFolderDialog();
         }
     }
 }

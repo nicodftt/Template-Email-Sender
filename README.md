@@ -15,7 +15,7 @@ Every row is a different mailbox to send an email.
 
 ## Remaining implementations
 
-- [ ] Add button to set folder path for input files.
+- [X] Add button to set folder path for input files.
 
 - [ ] Add functionality in order to allow  HTML files with images embedded.
 

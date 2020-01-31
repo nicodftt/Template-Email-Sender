@@ -93,7 +93,7 @@ namespace TemplatesFillerApp
                 // ...
             }
 
-            return folderBrowser.FileName;
+            return "";
 
 
         }

@@ -23,5 +23,9 @@ namespace TemplatesFillerApp
             return File.ReadAllText(htmlPath);
         }
 
+       private String replaceImageTags(String htmlText)
+        {
+            return "";
+        }
     }
 }

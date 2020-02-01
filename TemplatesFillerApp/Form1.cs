@@ -14,7 +14,6 @@ using Microsoft.Office.Interop.Excel;
 
 
 
-
 namespace TemplatesFillerApp
 {
     public partial class Form1 : Form
@@ -72,6 +71,7 @@ namespace TemplatesFillerApp
                auxiliarBody = auxiliarBody.Replace("*["+column.ColumnName+"]",""+row[column.ColumnName]);
 
             }
+
             return auxiliarBody;
         
         }

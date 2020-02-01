@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Word;
+using HtmlAgilityPack;
+
+
 
 
 
@@ -16,6 +19,7 @@ namespace TemplatesFillerApp
        public String loadData(String htmlPath, Form3 statusWindow)
         {
 
+           
             validatePath(htmlPath,statusWindow);
 
                 statusWindow.SetText("Loading Html file...");
@@ -25,6 +29,11 @@ namespace TemplatesFillerApp
 
        private String replaceImageTags(String htmlText)
         {
+            HtmlDocument html = new HtmlDocument();
+            html.LoadHtml(htmlText);
+            HtmlNode[] imageNodes = html.DocumentNode.SelectNodes("\\img").ToArray();
+                        
+
             return "";
         }
     }

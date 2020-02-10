@@ -11,3 +11,7 @@ D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.P
 D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.csproj.GenerateResource.cache
 D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.exe
 D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.pdb
+D:\git\Template-Email-Sender\TemplatesFillerApp\bin\Release\HtmlAgilityPack.dll
+D:\git\Template-Email-Sender\TemplatesFillerApp\bin\Release\HtmlAgilityPack.pdb
+D:\git\Template-Email-Sender\TemplatesFillerApp\bin\Release\HtmlAgilityPack.xml
+D:\git\Template-Email-Sender\TemplatesFillerApp\obj\Release\TemplatesFillerApp.csproj.CopyComplete

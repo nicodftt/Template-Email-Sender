@@ -23,3 +23,5 @@ Every row is a different mailbox to send an email.
 
 - [X] Add imputs for SMTP server and port.
 
+- [] Add functionality and interface to edit text with template variables highlighted.
+

@@ -71,18 +71,42 @@ namespace TemplatesFillerApp
                auxiliarBody = auxiliarBody.Replace("*["+column.ColumnName+"]",""+row[column.ColumnName]);
 
             }
+
             return auxiliarBody;
         
         }
 
+        private String OpenFolderDialog()
+        {
+
+            OpenFileDialog folderBrowser = new OpenFileDialog();
+            // Set validate names and check file exists to false otherwise windows will
+            // not let you select "Folder Selection."
+            folderBrowser.ValidateNames = false;
+            folderBrowser.CheckFileExists = false;
+            folderBrowser.CheckPathExists = true;
+            // Always default to Folder Selection.
+            folderBrowser.FileName = "Folder Selection.";
+            if (folderBrowser.ShowDialog() == DialogResult.OK)
+            {
+                return folderBrowser.FileName;
+                // ...
+            }
+
+            return "";
+
+
+        }
+
+
         private void sendEmails() {
 
-            SmtpClient client = new SmtpClient("smtp.gmail.com",587);
+            SmtpClient client = new SmtpClient(comboBox1.Text,Int32.Parse(textBox6.Text));
 
             client.EnableSsl = true;
 
             client.Credentials = new System.Net.NetworkCredential(textBox4.Text, textBox5.Text);
-
+            
 
             foreach (DataRow row in excelData.Rows)
             {
@@ -133,6 +157,7 @@ namespace TemplatesFillerApp
             }
         }
 
+
         private void label3_Click_1(object sender, EventArgs e)
         {
 
@@ -146,6 +171,52 @@ namespace TemplatesFillerApp
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = OpenFolderDialog();
+
+        }
+
+        private void folderBrowserDialog1_HelpRequest_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = OpenFolderDialog();
         }
     }
 }

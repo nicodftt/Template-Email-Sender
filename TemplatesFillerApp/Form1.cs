@@ -21,8 +21,6 @@ namespace TemplatesFillerApp
         private Form3 statusWindow;
 
 
-        private System.Data.DataTable excelData = new System.Data.DataTable();
-
         HtmlManipulator htmlManipulator = new HtmlManipulator();
 
         WorkbookManipulator workbookManipulator = new WorkbookManipulator();
@@ -55,7 +53,7 @@ namespace TemplatesFillerApp
 
             htmlManipulator.loadData(textBox1.Text,statusWindow);
 
-            excelData = workbookManipulator.loadData(textBox2.Text, statusWindow);
+            workbookManipulator.loadData(textBox2.Text, statusWindow);
         }
 
 
@@ -92,7 +90,7 @@ namespace TemplatesFillerApp
             client.Credentials = new System.Net.NetworkCredential(textBox4.Text, textBox5.Text);
             
 
-            foreach (DataRow row in excelData.Rows)
+            foreach (DataRow row in workbookManipulator.excelData.Rows)
             {
                
                 MailAddress to = new MailAddress(""+row["Email to"]);
@@ -105,7 +103,7 @@ namespace TemplatesFillerApp
 
                 email.IsBodyHtml = true;
 
-                email.Body = @createBodyText(row);
+                email.Body = htmlManipulator.createBodyText(workbookManipulator.excelData);
 
                 client.Send(email);
             }

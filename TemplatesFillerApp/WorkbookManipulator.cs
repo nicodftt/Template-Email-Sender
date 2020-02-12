@@ -10,11 +10,14 @@ namespace TemplatesFillerApp
     class WorkbookManipulator : Manipulator
     {
 
+        public System.Data.DataTable excelData = new System.Data.DataTable();
+
         private Workbook workbook;
 
         private Worksheet worksheet;
 
         private System.Data.DataTable excelDataTable = new System.Data.DataTable();
+
 
         private void copyHeader(Range usedRange) {
             /*Copy the header to the data table
@@ -22,13 +25,13 @@ namespace TemplatesFillerApp
             int columnIndex = 1;
 
             foreach (Range column in usedRange.Columns) {
-               
+               /*I Should review this part*/
                 excelDataTable.Columns.Add(column.Rows.Cells[1,columnIndex].Value2);
              
             }          
         
         }
-
+        /*This method must be reviewed*/
         private void copyValues(Range UsedRange) {
             /* This method copy all the data from the rows to the dataTable.
              * I don't know how to do it without using the index counters. I have to investigate and clean this part*/
@@ -60,7 +63,7 @@ namespace TemplatesFillerApp
         }
 
 
-        public System.Data.DataTable loadData(String excelPath, Form3 statusWindow)
+        public void loadData(String excelPath, Form3 statusWindow)
         {
 
           
@@ -88,7 +91,7 @@ namespace TemplatesFillerApp
 
                 statusWindow.SetText("Data table Rows: " + excelDataTable.Rows.Count);
 
-                return excelDataTable;
+                excelData =  excelDataTable;
 
             }
             catch (Exception message)

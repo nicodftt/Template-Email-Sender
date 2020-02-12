@@ -52,14 +52,13 @@ namespace TemplatesFillerApp
             return "";
         }
 
-        private String createBodyText(DataTable excel)
+         public String createBodyText(System.Data.DataTable excel)
         {
 
-           
 
             String auxiliarBody = bodyText;
 
-            foreach (DataColumn column in excelData.Columns)
+            foreach (DataColumn column in excel.Columns)
             {
                 String columnName = column.ColumnName;
 

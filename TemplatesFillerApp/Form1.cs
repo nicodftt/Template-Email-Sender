@@ -20,7 +20,6 @@ namespace TemplatesFillerApp
     {
         private Form3 statusWindow;
 
-        private String bodyText;
 
         private System.Data.DataTable excelData = new System.Data.DataTable();
 
@@ -54,27 +53,12 @@ namespace TemplatesFillerApp
 
             statusWindow.SetText("Loading files...");
 
-            bodyText = htmlManipulator.loadData(textBox1.Text,statusWindow);
+            htmlManipulator.loadData(textBox1.Text,statusWindow);
 
             excelData = workbookManipulator.loadData(textBox2.Text, statusWindow);
         }
 
-        private String createBodyText(DataRow row)
-        {
 
-           String auxiliarBody = bodyText;
-
-            foreach (DataColumn column in excelData.Columns)
-            {
-                String columnName=column.ColumnName;
-
-               auxiliarBody = auxiliarBody.Replace("*["+column.ColumnName+"]",""+row[column.ColumnName]);
-
-            }
-
-            return auxiliarBody;
-        
-        }
 
         private String OpenFolderDialog()
         {

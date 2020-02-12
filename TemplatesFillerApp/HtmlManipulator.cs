@@ -3,9 +3,11 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Word;
 using HtmlAgilityPack;
+using Microsoft.Office.Interop.Excel;
 
 
 
@@ -14,9 +16,12 @@ using HtmlAgilityPack;
 namespace TemplatesFillerApp
 {
     class HtmlManipulator : Manipulator
+
     {
-       public String[] attachments;
-       public String loadData(String htmlPath, Form3 statusWindow)
+       private String[] attachments;
+
+       private String bodyText;
+        public void loadData(String htmlPath, Form3 statusWindow)
         {
 
            
@@ -24,7 +29,7 @@ namespace TemplatesFillerApp
 
                 statusWindow.SetText("Loading Html file...");
 
-            return File.ReadAllText(htmlPath);
+             bodyText = File.ReadAllText(htmlPath);
         }
 
         private void loadAttachments(HtmlNode[] imageNodes) {
@@ -45,6 +50,25 @@ namespace TemplatesFillerApp
                         
 
             return "";
+        }
+
+        private String createBodyText(DataTable excel)
+        {
+
+           
+
+            String auxiliarBody = bodyText;
+
+            foreach (DataColumn column in excelData.Columns)
+            {
+                String columnName = column.ColumnName;
+
+                auxiliarBody = auxiliarBody.Replace("*[" + column.ColumnName + "]", "" + row[column.ColumnName]);
+
+            }
+
+            return auxiliarBody;
+
         }
     }
 }

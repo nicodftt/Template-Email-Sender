@@ -52,7 +52,7 @@ namespace TemplatesFillerApp
             return "";
         }
 
-         public String createBodyText(System.Data.DataTable excel)
+         public String createBodyText(System.Data.DataTable excel, System.Data.DataRow row)
         {
 
 
